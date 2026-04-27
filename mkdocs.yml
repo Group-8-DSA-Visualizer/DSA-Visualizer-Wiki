@@ -1,0 +1,31 @@
+site_name: DSA Visualizer Documentation
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+  - macros
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Architecture: architecture.md
+  - Algorithm Implementation Guide: algorithm-implementation-guide.md
+  - Extending the System: extending-the-system.md
+  - Developer Guide: developer-guide.md
+  - FAQ: faq.md
+
+extra:
+  team_contact: dsa-visualizer-cis-capstone-2026@csuohio.onmicrosoft.com
+  source_repo: https://github.com/Group-8-DSA-Visualizer/DSA-Visualizer
+  source_repo_git: git@github.com:Group-8-DSA-Visualizer/DSA-Visualizer.git
