@@ -16,6 +16,9 @@ plugins:
   - search
   - macros
 
+permissions:
+  contents: write
+
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
