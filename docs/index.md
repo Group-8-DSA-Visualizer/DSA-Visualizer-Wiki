@@ -2,11 +2,11 @@
 
 A web‑based application for interactively visualizing data structures and algorithms (DSA), built with [NiceGUI](https://nicegui.io/).
 
-This site contains the official documentation for:
+This site contains documentation for:
 
 - **Instructors** – Learn to write your own algorithm visualizations.
-- **Maintainers** – Understand the architecture and how to extend it with new data structures (trees, graphs, …).
-- **Contributors** – Developer guides, project structure, and testing instructions.
+- **Maintainers** – Understand the architecture and project structyre.
+- **Contributors** – Developer guides, information on how to extend the project, and testing instructions.
 
 ## Quick Links
 
