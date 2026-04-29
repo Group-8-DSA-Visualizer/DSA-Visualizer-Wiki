@@ -117,7 +117,7 @@ classDiagram
     BaseVisualizer <|-- LinearAlgorithmVisualizer
 
     BaseRunConfig --> BaseVisualizer : callback(steps)
-    note for BaseRunConfig "on_run_callback calls\nvisualizer.import_steps(steps)"
+    note for BaseRunConfig "on_run_callback calls nvisualizer.import_steps(steps)"
 
     LinearAlgorithmRunConfig --> BaseAlgorithm : uses
 ```
