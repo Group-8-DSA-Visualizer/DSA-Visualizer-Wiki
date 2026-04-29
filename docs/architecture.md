@@ -35,7 +35,6 @@ sequenceDiagram
     AlgorithmExecutor-->>AlgorithmLoader: steps
     AlgorithmLoader-->>AlgorithmRunner: steps
     AlgorithmRunner-->>RunConfig: poll result (success/error)
-    RunConfig-->>User: Show steps via callback
     RunConfig->>Visualizer: import_steps(steps)
 ```
 
@@ -76,50 +75,44 @@ The following diagram shows the key abstract classes and their relationships:
 
 ```mermaid
 classDiagram
-    direction TB
-
     class BaseAlgorithm {
         <<abstract>>
-        +display_name : str
-        +input_type : str
-        +name : str
-        +needs_target : bool
-        +execute(input_data: Any) List~Dict~
+        +execute(input)
     }
-    class BubbleSort {
-        +execute(arr) List~Dict~
-    }
-    class LinearSearch {
-        +execute(arr, target) List~Dict~
-    }
-    BaseAlgorithm <|-- BubbleSort
-    BaseAlgorithm <|-- LinearSearch
-
     class BaseRunConfig {
         <<abstract>>
-        +set_run_callback(cb)
-        +_build_ui()
+        +setAlgorithm(algo)
+        +run(input)
     }
-    class LinearAlgorithmRunConfig {
-        +set_algorithm()
-    }
-    BaseRunConfig <|-- LinearAlgorithmRunConfig
-
     class BaseVisualizer {
         <<abstract>>
-        +import_steps(steps)
-        +reset()
-        +render_step(step_index)
+        +importSteps(steps)
+        +render()
     }
-    class LinearAlgorithmVisualizer {
-        +_build_display_area()
+    class BaseRenderer {
+        <<abstract>>
+        +render(step)
     }
-    BaseVisualizer <|-- LinearAlgorithmVisualizer
 
-    BaseRunConfig --> BaseVisualizer : callback(steps)
-    note for BaseRunConfig "on_run_callback calls visualizer.import_steps(steps)"
+    class PageCoordinator {
+        -registry
+        -currentRunConfig
+        -currentVisualizer
+        +onSelect(component)
+        +wireComponents()
+    }
+    class ComponentRegistry {
+        <<singleton>>
+        +register(id, factory)
+        +get(id)
+    }
 
-    LinearAlgorithmRunConfig --> BaseAlgorithm : uses
+    PageCoordinator ..> ComponentRegistry : uses
+    PageCoordinator ..> BaseRunConfig : creates & wires
+    PageCoordinator ..> BaseVisualizer : creates & wires
+
+    BaseRunConfig ..> BaseAlgorithm : holds instance & executes
+    BaseVisualizer ..> BaseRenderer : delegates rendering
 ```
 
 !!! info "Full PlantUML diagrams"
