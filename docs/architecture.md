@@ -16,6 +16,7 @@ All layers communicate through abstract interfaces (`BaseAlgorithm`, `BaseVisual
 
 When a user presses **Run Algorithm**, the following sequence occurs:
 
+
 ```mermaid
 sequenceDiagram
     participant User
