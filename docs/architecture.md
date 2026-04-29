@@ -74,7 +74,8 @@ flowchart TD
 
 The following diagram shows the key abstract classes and their relationships:
 
-```classDiagram
+```mermaid
+classDiagram
     direction TB
 
     class BaseAlgorithm {
