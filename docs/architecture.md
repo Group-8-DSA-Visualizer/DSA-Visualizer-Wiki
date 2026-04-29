@@ -74,8 +74,9 @@ flowchart TD
 
 The following diagram shows the key abstract classes and their relationships:
 
-```mermaid
-classDiagram
+```classDiagram
+    direction TB
+
     class BaseAlgorithm {
         <<abstract>>
         +display_name : str
@@ -84,60 +85,38 @@ classDiagram
         +needs_target : bool
         +execute(input_data: Any) List~Dict~
     }
-
     class BubbleSort {
-        +display_name = "Example Bubble Sort"
-        +name = "e_bubble_sort"
-        +execute(arr: List~int~) List~Dict~
+        +execute(arr) List~Dict~
     }
     class LinearSearch {
-        +display_name = "Example Linear Search"
-        +name = "e_linear_search"
         +execute(arr, target) List~Dict~
     }
-
     BaseAlgorithm <|-- BubbleSort
     BaseAlgorithm <|-- LinearSearch
 
+    class BaseRunConfig {
+        <<abstract>>
+        +set_run_callback(cb)
+        +_build_ui()
+    }
+    class LinearAlgorithmRunConfig {
+        +set_algorithm()
+    }
+    BaseRunConfig <|-- LinearAlgorithmRunConfig
+
+    class LinearAlgorithmVisualizer {
+        +_build_display_area()
+    }
     class BaseVisualizer {
         <<abstract>>
-        +import_steps(steps: List)
+        +import_steps(steps)
         +reset()
-        +render_step(step_index: int)
+        +render_step(step_index)
     }
+    LinearAlgorithmVisualizer --|> BaseVisualizer
 
-    class StepBasedVisualizer {
-        +animation_player
-        +playback_controls
-        +step_slider
-        +steps_list
-        +toggle_study_mode(bool)
-    }
-    BaseVisualizer <|-- StepBasedVisualizer
-
-    class BaseDataStructure {
-        <<abstract>>
-        +get_state() List
-        +execute_operation(op, args) List~Dict~
-        +generate_random_mutation_steps(count) List~Dict~
-    }
-
-    class ArrayList {
-        +append(value)
-        +remove(value)
-        +get(index)
-    }
-    BaseDataStructure <|-- ArrayList
-
-    class ComponentRegistry {
-        <<singleton>>
-        +register(id, type, display_name, category, build_fn)
-        +get(id) dict
-        +get_all() dict
-    }
-
-    StepBasedVisualizer --> ComponentRegistry : uses
-    BaseAlgorithm --> ComponentRegistry : registered in
+    LinearAlgorithmRunConfig --> LinearAlgorithmVisualizer : callback(steps)
+    LinearAlgorithmRunConfig --> BaseAlgorithm : uses
 ```
 
 !!! info "Full PlantUML diagrams"
