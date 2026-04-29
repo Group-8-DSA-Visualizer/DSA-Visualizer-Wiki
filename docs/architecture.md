@@ -105,18 +105,20 @@ classDiagram
     }
     BaseRunConfig <|-- LinearAlgorithmRunConfig
 
-    class LinearAlgorithmVisualizer {
-        +_build_display_area()
-    }
     class BaseVisualizer {
         <<abstract>>
         +import_steps(steps)
         +reset()
         +render_step(step_index)
     }
-    LinearAlgorithmVisualizer --|> BaseVisualizer
+    class LinearAlgorithmVisualizer {
+        +_build_display_area()
+    }
+    BaseVisualizer <|-- LinearAlgorithmVisualizer
 
-    LinearAlgorithmRunConfig --> LinearAlgorithmVisualizer : callback(steps)
+    BaseRunConfig --> BaseVisualizer : callback(steps)
+    note for BaseRunConfig "on_run_callback calls\nvisualizer.import_steps(steps)"
+
     LinearAlgorithmRunConfig --> BaseAlgorithm : uses
 ```
 
