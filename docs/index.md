@@ -16,4 +16,5 @@ This site contains documentation for:
 - [Algorithm Implementation Guide](algorithm-implementation-guide.md) – Write your own algorithms.
 - [Extending the System](extending-the-system.md) – How a future maintainer could extend the system.
 - [Developer Guide](developer-guide.md) – Project layout, env vars, debugging.
+- [Hosting the Application](hosting.md) – Deployment, process knowledge, future challenges
 - [FAQ](faq.md) – Troubleshooting common problems.
