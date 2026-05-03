@@ -185,6 +185,10 @@ class MyBubbleSort(BaseAlgorithm):
 
         return steps
 ```
+!!! note "Mutable Data Types"
+    It is important that the data key passes a *copy* of the data structure, rather than the object
+    that you are operating on directly. Otherwise, the visualizer will display the final state
+    of the object for every step.
 
 ### Example 2: Linear Search with target
 
