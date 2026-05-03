@@ -145,3 +145,4 @@ This outputs `classes_DSA-Visualizer.puml` and `packages_DSA-Visualizer.puml`. Y
 - Run `python test.py` before submitting a pull request.
 
 For architecture details and extension guides, see the [Architecture Overview](architecture.md) and [Extending the System](extending-the-system.md) pages.
+Known system limitations can be found in [Known Limitations](known-limitations.md)

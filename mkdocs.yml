@@ -39,7 +39,12 @@ nav:
   - Algorithm Implementation Guide: algorithm-implementation-guide.md
   - Extending the System: extending-the-system.md
   - Developer Guide: developer-guide.md
+  - Known Limitations: known-limitations.md
   - FAQ: faq.md
+
+  - Hosting the Application:
+    - Docker Integration: docker-integration.md
+    - Hosting: hosting.md
 
 extra:
   team_contact: dsa-visualizer-cis-capstone-2026@csuohio.onmicrosoft.com
