@@ -1,0 +1,1453 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../known-limitations/">
+      
+      
+        <link rel="next" href="../docker-integration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>FAQ - DSA Visualizer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../None">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="custom" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DSA Visualizer Documentation" class="md-header__button md-logo" aria-label="DSA Visualizer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DSA Visualizer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="custom" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DSA Visualizer Documentation" class="md-nav__button md-logo" aria-label="DSA Visualizer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DSA Visualizer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithm-implementation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Implementation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extending-the-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending the System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../known-limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation and Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation and Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i-get-a-modulenotfounderror-when-running-python-m-srcmain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I get a ModuleNotFoundError when running python -m src.main
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-application-starts-but-custom-algorithms-are-not-loaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The application starts but custom-algorithms/ are not loaded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-changed-an-algorithm-file-but-the-ui-doesnt-see-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I changed an algorithm file but the UI doesn’t see it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-build-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker build fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#my-algorithm-doesnt-appear-in-the-sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My algorithm doesn’t appear in the sidebar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-i-get-a-security-check-failed-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do I get a “Security Check Failed” error?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-i-get-algorithm-timed-out-after-xs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do I get “Algorithm timed out after {X}s”?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-i-get-error-running-algorithm-no-result-from-subprocess" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do I get “Error running algorithm: No result from subprocess”?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-use-the-needs_target-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I use the needs_target property?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations-and-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations and Visualization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Annotations and Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-annotation-categories-are-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What annotation categories are available?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-highlight-a-range-of-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I highlight a range of elements?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-draw-a-vertical-separator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I draw a vertical separator?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-add-a-new-builtin-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I add a new built‑in data structure?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-generate-random-mutations-button-does-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The “Generate Random Mutations” button does nothing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-and-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development and Debugging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development and Debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-see-debug-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I see debug logs?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-run-only-specific-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I run only specific tests?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-regenerate-the-class-diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I regenerate the class diagrams?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-code-mentions-mp_main-in-mainpy-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The code mentions mp_main in main.py. Why?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#can-i-run-this-on-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can I run this on Windows?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-expose-this-to-the-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can I expose this to the internet?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-can-i-ask-more-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where can I ask more questions?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting the Application
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hosting the Application
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation and Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation and Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i-get-a-modulenotfounderror-when-running-python-m-srcmain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I get a ModuleNotFoundError when running python -m src.main
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-application-starts-but-custom-algorithms-are-not-loaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The application starts but custom-algorithms/ are not loaded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-changed-an-algorithm-file-but-the-ui-doesnt-see-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I changed an algorithm file but the UI doesn’t see it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-build-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker build fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#my-algorithm-doesnt-appear-in-the-sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My algorithm doesn’t appear in the sidebar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-i-get-a-security-check-failed-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do I get a “Security Check Failed” error?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-i-get-algorithm-timed-out-after-xs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do I get “Algorithm timed out after {X}s”?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-i-get-error-running-algorithm-no-result-from-subprocess" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do I get “Error running algorithm: No result from subprocess”?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-use-the-needs_target-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I use the needs_target property?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations-and-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations and Visualization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Annotations and Visualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-annotation-categories-are-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What annotation categories are available?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-highlight-a-range-of-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I highlight a range of elements?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-draw-a-vertical-separator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I draw a vertical separator?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-add-a-new-builtin-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I add a new built‑in data structure?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-generate-random-mutations-button-does-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The “Generate Random Mutations” button does nothing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-and-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development and Debugging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development and Debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-see-debug-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I see debug logs?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-run-only-specific-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I run only specific tests?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-regenerate-the-class-diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I regenerate the class diagrams?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-code-mentions-mp_main-in-mainpy-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The code mentions mp_main in main.py. Why?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#can-i-run-this-on-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can I run this on Windows?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-expose-this-to-the-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can I expose this to the internet?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-can-i-ask-more-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where can I ask more questions?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="faq">FAQ</h1>
+<h2 id="installation-and-setup">Installation and Setup</h2>
+<h3 id="i-get-a-modulenotfounderror-when-running-python-m-srcmain">I get a <code>ModuleNotFoundError</code> when running <code>python -m src.main</code></h3>
+<p>Make sure you have installed dependencies:
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre></div>
+Also verify your current working directory is the project root (the folder containing <code>src/</code>).</p>
+<h3 id="the-application-starts-but-custom-algorithms-are-not-loaded">The application starts but <code>custom-algorithms/</code> are not loaded</h3>
+<ul>
+<li>For <strong>local runs</strong>: ensure <code>CUSTOM_ALGORITHMS_DIR</code> is set in <code>.env</code> (default is <code>./custom-algorithms</code>). The <code>.env</code> file must be in the project root.</li>
+<li>For <strong>Docker</strong>: the volume mapping in <code>docker-compose.yml</code> must point to the correct host directory. Check that the host path defined in .env exists and contains <code>.py</code> files.</li>
+<li>Run with <code>DEBUG=true</code> to see logs about loaded algorithms.</li>
+</ul>
+<h3 id="i-changed-an-algorithm-file-but-the-ui-doesnt-see-it">I changed an algorithm file but the UI doesn’t see it</h3>
+<p>The algorithm loader caches instances at startup. Restart the application. (There is a <code>AlgorithmLoader.reload()</code> class method that can be called programmatically, but it’s not exposed in the UI by default.)</p>
+<h3 id="docker-build-fails">Docker build fails</h3>
+<p>Ensure your <code>requirements.txt</code> includes <code>python-dotenv</code>. The Dockerfile installs from that file. If you added new packages, run <code>docker-compose build --no-cache</code> to rebuild.</p>
+<h2 id="algorithms">Algorithms</h2>
+<h3 id="my-algorithm-doesnt-appear-in-the-sidebar">My algorithm doesn’t appear in the sidebar</h3>
+<p>Check:
+1. The file is under the directory specified by <code>CUSTOM_ALGORITHMS_DIR</code>.
+2. The class inherits from <code>BaseAlgorithm</code>.
+3. The class has <code>enabled = True</code> (or omits it; default is <code>True</code>).
+4. The file doesn’t contain syntax errors (enable <code>DEBUG=true</code> to see import errors).</p>
+<h3 id="why-do-i-get-a-security-check-failed-error">Why do I get a “Security Check Failed” error?</h3>
+<p>Your algorithm contains forbidden operations, such as <code>import</code>, <code>open</code>, <code>socket</code>, introspection (<code>__subclasses__</code>), or access to disallowed built‑ins. The sandbox only allows a minimal set of built‑ins (see the <strong>Algorithm Implementation Guide</strong>). Remove the forbidden code.</p>
+<h3 id="why-do-i-get-algorithm-timed-out-after-xs">Why do I get “Algorithm timed out after {X}s”?</h3>
+<p>Your algorithm took too long, likely due to an infinite loop or very large input. Check loop conditions and ensure the input size respects <code>ARRAY_MAX_LENGTH</code> (default 32).</p>
+<h3 id="why-do-i-get-error-running-algorithm-no-result-from-subprocess">Why do I get “Error running algorithm: No result from subprocess”?</h3>
+<p>Your algorithm may have generated too many steps or used too much memory. Optimize your algorithm, restrict <code>ARRAY_MAX_LENGTH</code>, or adjust <code>ALGO_TIMEOUT</code> and <code>ALGO_MAX_MEMORY_MB</code></p>
+<h3 id="how-do-i-use-the-needs_target-property">How do I use the <code>needs_target</code> property?</h3>
+<p>If your algorithm requires a target value (e.g., search), set:
+<div class="highlight"><pre><span></span><code><span class="nd">@property</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">needs_target</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+The UI will show a “Target Value” input. Inside <code>execute</code>, the <code>input_data</code> argument will be a tuple <code>(array, target)</code>.</p>
+<h2 id="annotations-and-visualization">Annotations and Visualization</h2>
+<h3 id="what-annotation-categories-are-available">What annotation categories are available?</h3>
+<p><code>default</code>, <code>success</code>, <code>failure</code>, <code>compare</code>, <code>swap</code>, <code>pivot</code>, <code>partition</code>, <code>merge</code>, <code>discard</code>. They map to predefined colors. You can override with a <code>color</code> key.</p>
+<h3 id="how-do-i-highlight-a-range-of-elements">How do I highlight a range of elements?</h3>
+<p>Use a tuple <code>(start, end)</code> in the <code>annotations</code> dict:
+<div class="highlight"><pre><span></span><code><span class="n">annotations</span><span class="o">=</span><span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;sorted&#39;</span><span class="p">}}</span>
+</code></pre></div>
+This applies the category to all indices from 0 to 5 inclusive.</p>
+<h3 id="how-do-i-draw-a-vertical-separator">How do I draw a vertical separator?</h3>
+<p>Add <code>'separator_after': True</code> to an annotation for a given index. The separator appears after that element.</p>
+<h2 id="data-structures">Data Structures</h2>
+<h3 id="how-do-i-add-a-new-builtin-data-structure">How do I add a new built‑in data structure?</h3>
+<p>Implement <code>BaseDataStructure</code> in <code>src/datastructures/</code>, add it to <code>BUILTIN_DS_CLASSES</code> in <code>page_coordinator.py</code>, and register a factory in <code>_register_components</code>. The existing <code>DataStructureVisualizer</code> and <code>OperationPanel</code> will work immediately.</p>
+<h3 id="the-generate-random-mutations-button-does-nothing">The “Generate Random Mutations” button does nothing</h3>
+<p>Ensure the data structure has elements. Mutations only operate when the structure is non‑empty. Also check that the <code>generate_random_mutation_steps</code> method is implemented.</p>
+<h2 id="development-and-debugging">Development and Debugging</h2>
+<h3 id="how-do-i-see-debug-logs">How do I see debug logs?</h3>
+<p>Set <code>DEBUG=true</code> in <code>.env</code> (or the container environment). Debug messages print to the console with the client IP.</p>
+<h3 id="how-do-i-run-only-specific-tests">How do I run only specific tests?</h3>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>tests.test_e_bubble_sort
+</code></pre></div>
+<h3 id="how-do-i-regenerate-the-class-diagrams">How do I regenerate the class diagrams?</h3>
+<p><div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pylint
+pyreverse<span class="w"> </span>src/<span class="w"> </span>-o<span class="w"> </span>puml<span class="w"> </span>-f<span class="w"> </span>ALL<span class="w"> </span>-m<span class="w"> </span>y<span class="w"> </span>-L<span class="w"> </span>--colorized<span class="w"> </span>-p<span class="w"> </span>DSA-Visualizer
+</code></pre></div>
+Then convert <code>.puml</code> files to images using PlantUML.</p>
+<h3 id="the-code-mentions-mp_main-in-mainpy-why">The code mentions <code>mp_main</code> in <code>main.py</code>. Why?</h3>
+<p>NiceGUI uses multiple workers in production; the <code>if __name__ == '__mp_main__'</code> guard prevents the server from starting twice per worker. This is normal.</p>
+<h2 id="general">General</h2>
+<h3 id="can-i-run-this-on-windows">Can I run this on Windows?</h3>
+<p>Yes, but resource limits (CPU, memory) are only enforced on Linux or WSL. The sandbox still works; the subprocess timeout will block infinite loops.</p>
+<h3 id="can-i-expose-this-to-the-internet">Can I expose this to the internet?</h3>
+<p>The application includes a security sandbox, but it is always recommended to run behind a reverse proxy with HTTPS in production. Do not expose the raw NiceGUI server. Ensure that file permissions are configured correctly such that only authorized users can add custom algorithm implementations.</p>
+<h3 id="where-can-i-ask-more-questions">Where can I ask more questions?</h3>
+<p>Contact dsa-visualizer-cis-capstone-2026@csuohio.onmicrosoft.com.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

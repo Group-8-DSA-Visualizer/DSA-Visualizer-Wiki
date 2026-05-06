@@ -1,0 +1,1349 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../algorithm-implementation-guide/">
+      
+      
+        <link rel="next" href="../developer-guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Extending the System - DSA Visualizer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../None">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="custom" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#extending-the-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DSA Visualizer Documentation" class="md-header__button md-logo" aria-label="DSA Visualizer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DSA Visualizer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Extending the System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="custom" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DSA Visualizer Documentation" class="md-nav__button md-logo" aria-label="DSA Visualizer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DSA Visualizer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithm-implementation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Implementation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending the System
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending the System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-extensibility-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Extensibility Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-adding-a-new-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Adding a New Renderer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Adding a New Renderer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-define-the-step-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Define the step format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-implement-the-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Implement the renderer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-register-the-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Register the renderer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creating-a-new-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Creating a New Visualizer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Creating a New Visualizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subclass-stepbasedvisualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subclass StepBasedVisualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-structure-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data structure integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creating-a-run-configuration-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Creating a Run Configuration (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-register-the-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Register the Component
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-adding-built-in-data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Adding Built-in Data Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Adding Built-in Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-class-in-srcdatastructures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create a class in src/datastructures/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-register-in-pagecoordinatorbuiltin_ds_classes-and-add-an-operationpanel-compatible-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Register in PageCoordinator.BUILTIN_DS_CLASSES and add an OperationPanel-compatible visualizer.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-example-adding-a-binary-search-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Example: Adding a Binary Search Tree
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Example: Adding a Binary Search Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bst-step-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BST step format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renderer-simplified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renderer (simplified)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-making-extensions-discoverable-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Making Extensions Discoverable (Future)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../known-limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting the Application
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hosting the Application
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-extensibility-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Extensibility Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-adding-a-new-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Adding a New Renderer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Adding a New Renderer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-define-the-step-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Define the step format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-implement-the-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Implement the renderer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-register-the-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Register the renderer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creating-a-new-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Creating a New Visualizer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Creating a New Visualizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subclass-stepbasedvisualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subclass StepBasedVisualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-structure-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data structure integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creating-a-run-configuration-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Creating a Run Configuration (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-register-the-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Register the Component
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-adding-built-in-data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Adding Built-in Data Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Adding Built-in Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-class-in-srcdatastructures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create a class in src/datastructures/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-register-in-pagecoordinatorbuiltin_ds_classes-and-add-an-operationpanel-compatible-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Register in PageCoordinator.BUILTIN_DS_CLASSES and add an OperationPanel-compatible visualizer.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-example-adding-a-binary-search-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Example: Adding a Binary Search Tree
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Example: Adding a Binary Search Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bst-step-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BST step format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renderer-simplified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Renderer (simplified)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-making-extensions-discoverable-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Making Extensions Discoverable (Future)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="extending-the-system">Extending the System</h1>
+<p>The DSA Visualizer is built to be extended with new visualization types (trees, graphs, tables, etc.) without modifying core code. This guide walks you through the process.</p>
+<h2 id="1-extensibility-points">1. Extensibility Points</h2>
+<p>The system provides three main extension hooks:</p>
+<table>
+<thead>
+<tr>
+<th>Hook</th>
+<th>What it does</th>
+<th>Where to implement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Renderer</strong></td>
+<td>Draws a single step of a given <code>type</code> (e.g., <code>"array"</code>, <code>"tree"</code>).</td>
+<td>Subclass <code>BaseRenderer</code> and register in <code>AnimationPlayer</code>.</td>
+</tr>
+<tr>
+<td><strong>Visualizer</strong></td>
+<td>Manages steps, playback, description, and UI layout for a component.</td>
+<td>Subclass <code>StepBasedVisualizer</code> (or <code>BaseVisualizer</code>) and define <code>_build_display_area</code>.</td>
+</tr>
+<tr>
+<td><strong>Run Configuration</strong></td>
+<td>UI for input and execution control of a component.</td>
+<td>Subclass <code>BaseRunConfig</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>All components are registered in the <strong>ComponentRegistry</strong>, a singleton that the sidebar and page coordinator read. Registration is done in <code>PageCoordinator._register_components()</code>.</p>
+<hr />
+<h2 id="2-adding-a-new-renderer">2. Adding a New Renderer</h2>
+<p>A renderer translates a step dictionary into NiceGUI elements. For a new visualization type (e.g., <code>"tree"</code>), you need a renderer that understands the step format.</p>
+<h3 id="step-1-define-the-step-format">Step 1: Define the step format</h3>
+<p>Document what keys your renderer expects. A tree may look like:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;tree&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;root&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;nodes&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{},</span> <span class="mi">3</span><span class="p">:</span> <span class="p">{}},</span>
+    <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;compare&#39;</span><span class="p">},</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">}},</span>
+    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;Comparing node 1 with target&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="step-2-implement-the-renderer">Step 2: Implement the renderer</h3>
+<p>Create a new file, e.g., <code>src/services/renderers/tree_renderer.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nicegui</span><span class="w"> </span><span class="kn">import</span> <span class="n">ui</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">src.services.renderers.base_renderer</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseRenderer</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TreeRenderer</span><span class="p">(</span><span class="n">BaseRenderer</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nodes&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">annotations</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;annotations&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="c1"># Use NiceGUI elements (ui.html, ui.svg, etc.) to draw the tree.</span>
+        <span class="c1"># You could recursively build rows/columns or use an HTML canvas.</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">column</span><span class="p">()</span><span class="o">.</span><span class="n">classes</span><span class="p">(</span><span class="s1">&#39;items-center&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_draw_node</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">annotations</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_draw_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node_id</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">annotations</span><span class="p">):</span>
+        <span class="n">ann</span> <span class="o">=</span> <span class="n">annotations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">ann</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">row</span><span class="p">()</span><span class="o">.</span><span class="n">classes</span><span class="p">(</span><span class="s1">&#39;items-center&#39;</span><span class="p">):</span>
+            <span class="n">ui</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">node_id</span><span class="p">))</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+        <span class="c1"># ... draw children recursively</span>
+</code></pre></div>
+<h3 id="step-3-register-the-renderer">Step 3: Register the renderer</h3>
+<p>In <code>src/services/animation_player.py</code>, add the renderer:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">src.services.renderers.tree_renderer</span><span class="w"> </span><span class="kn">import</span> <span class="n">TreeRenderer</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">AnimationPlayer</span><span class="p">:</span>
+    <span class="n">_renderers</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;array&#39;</span><span class="p">:</span> <span class="n">ArrayRenderer</span><span class="p">(),</span>
+        <span class="s1">&#39;tree&#39;</span><span class="p">:</span> <span class="n">TreeRenderer</span><span class="p">(),</span>
+    <span class="p">}</span>
+</code></pre></div>
+<p>Alternatively, use the class method <code>AnimationPlayer.add_renderer('tree', TreeRenderer())</code> from anywhere (e.g., in <code>PageCoordinator._register_components</code>).</p>
+<hr />
+<h2 id="3-creating-a-new-visualizer">3. Creating a New Visualizer</h2>
+<p>If the new visualization needs a different layout or extra UI elements (e.g., an operations panel for interactive trees), create a visualizer.</p>
+<h3 id="subclass-stepbasedvisualizer">Subclass <code>StepBasedVisualizer</code></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nicegui</span><span class="w"> </span><span class="kn">import</span> <span class="n">ui</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">src.components.common.step_based_visualizer</span><span class="w"> </span><span class="kn">import</span> <span class="n">StepBasedVisualizer</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TreeVisualizer</span><span class="p">(</span><span class="n">StepBasedVisualizer</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">finish_initialization</span><span class="p">()</span>   <span class="c1"># builds the UI</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_display_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">display_area</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">column</span><span class="p">()</span><span class="o">.</span><span class="n">classes</span><span class="p">(</span><span class="s1">&#39;w-full h-full items-center justify-center&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">display_area</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="s1">&#39;min-height: 512px;&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>You can override <code>_add_extra_ui_after_display</code> or <code>_add_extra_ui_after_description</code> to insert custom buttons (e.g., "Insert Node", "Delete Node") that interact with a data structure.</p>
+<h3 id="data-structure-integration">Data structure integration</h3>
+<p>If the visualizer works with a stateful tree object (like a <code>BaseDataStructure</code> subclass), pass it in the constructor and reuse the operation panel pattern from <code>DataStructureVisualizer</code>. See the existing <code>DataStructureVisualizer</code> for an example.</p>
+<hr />
+<h2 id="4-creating-a-run-configuration-optional">4. Creating a Run Configuration (Optional)</h2>
+<p>If the new component requires custom input (e.g., edges for a graph, initial tree values), subclass <code>BaseRunConfig</code> and build the necessary UI.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nicegui</span><span class="w"> </span><span class="kn">import</span> <span class="n">ui</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">src.components.common.base_run_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseRunConfig</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TreeRunConfig</span><span class="p">(</span><span class="n">BaseRunConfig</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree_instance</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">tree_instance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_build_ui</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ui</span><span class="o">.</span><span class="n">separator</span><span class="p">()</span><span class="o">.</span><span class="n">classes</span><span class="p">(</span><span class="s1">&#39;q-my-xs&#39;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">ui</span><span class="o">.</span><span class="n">column</span><span class="p">()</span><span class="o">.</span><span class="n">classes</span><span class="p">(</span><span class="s1">&#39;w-full items-start gap-0 q-mb-md&#39;</span><span class="p">):</span>
+            <span class="c1"># Add inputs, buttons, etc.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">run_btn</span> <span class="o">=</span> <span class="n">ui</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s1">&#39;Run Tree Algorithm&#39;</span><span class="p">,</span> <span class="n">on_click</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_run</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="5-register-the-component">5. Register the Component</h2>
+<p>Edit <code>src/pages/page_coordinator.py</code> in the <code>_register_components</code> method. Add a block for the new type:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Inside PageCoordinator._register_components():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_tree_build</span><span class="p">(</span><span class="n">loader</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">my_tree_module</span><span class="w"> </span><span class="kn">import</span> <span class="n">MyTree</span>  <span class="c1"># or use BUILTIN_DS_CLASSES pattern</span>
+    <span class="n">inst</span> <span class="o">=</span> <span class="n">MyTree</span><span class="p">()</span>
+    <span class="n">rc</span> <span class="o">=</span> <span class="n">TreeRunConfig</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+    <span class="n">vis</span> <span class="o">=</span> <span class="n">TreeVisualizer</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+    <span class="n">rc</span><span class="o">.</span><span class="n">set_visualizer</span><span class="p">(</span><span class="n">vis</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rc</span><span class="p">,</span> <span class="n">vis</span>
+
+<span class="n">registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;my_tree&#39;</span><span class="p">,</span> <span class="s1">&#39;datastructure&#39;</span><span class="p">,</span> <span class="s1">&#39;My Tree&#39;</span><span class="p">,</span> <span class="s1">&#39;Trees&#39;</span><span class="p">,</span> <span class="n">make_tree_build</span><span class="p">)</span>
+</code></pre></div>
+<p>If you also registered a renderer, the visualizer will automatically use it because <code>AnimationPlayer</code> now knows about <code>'tree'</code> steps.</p>
+<hr />
+<h2 id="6-adding-built-in-data-structures">6. Adding Built-in Data Structures</h2>
+<p>To add a new interactive data structure (like a heap or deque), implement the <code>BaseDataStructure</code> abstract class. The existing <code>ArrayList</code>, <code>Stack</code>, and <code>Queue</code> are good references.</p>
+<h3 id="step-1-create-a-class-in-srcdatastructures">Step 1: Create a class in <code>src/datastructures/</code></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">src.datastructures.base_data_structure</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseDataStructure</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MinHeap</span><span class="p">(</span><span class="n">BaseDataStructure</span><span class="p">):</span>
+    <span class="c1"># implement all abstract methods</span>
+    <span class="o">...</span>
+</code></pre></div>
+<h3 id="step-2-register-in-pagecoordinatorbuiltin_ds_classes-and-add-an-operationpanel-compatible-visualizer">Step 2: Register in <code>PageCoordinator.BUILTIN_DS_CLASSES</code> and add an <code>OperationPanel</code>-compatible visualizer.</h3>
+<p>The <code>DataStructureVisualizer</code> already supports any <code>BaseDataStructure</code> via the <code>OperationPanel</code>. So you can reuse it directly, just passing the new instance.</p>
+<hr />
+<h2 id="7-example-adding-a-binary-search-tree">7. Example: Adding a Binary Search Tree</h2>
+<p>Here’s a minimal end‑to‑end example.</p>
+<h3 id="bst-step-format">BST step format</h3>
+<div class="highlight"><pre><span></span><code><span class="n">step</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;tree&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;root&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;nodes&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">10</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">},</span> <span class="mi">5</span><span class="p">:</span> <span class="p">{},</span> <span class="mi">15</span><span class="p">:</span> <span class="p">{}},</span>
+    <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">10</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">},</span> <span class="mi">5</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">}},</span>
+    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;Inserted 5&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="renderer-simplified">Renderer (simplified)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">BSTRenderer</span><span class="p">(</span><span class="n">BaseRenderer</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">step</span><span class="p">[</span><span class="s1">&#39;root&#39;</span><span class="p">]</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">step</span><span class="p">[</span><span class="s1">&#39;nodes&#39;</span><span class="p">]</span>
+        <span class="n">ann</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;annotations&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="c1"># Build an HTML tree using ui.html or ui.svg.</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_html_tree</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">ann</span><span class="p">)</span>
+        <span class="n">ui</span><span class="o">.</span><span class="n">html</span><span class="p">(</span><span class="n">html</span><span class="p">)</span><span class="o">.</span><span class="n">classes</span><span class="p">(</span><span class="s1">&#39;w-full&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_html_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node_id</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">ann</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">node_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">ann</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node_id</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;#000&#39;</span><span class="p">)</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_html_tree</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">),</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">ann</span><span class="p">)</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_html_tree</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;right&#39;</span><span class="p">),</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">ann</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&lt;div style=&quot;color:</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&quot;&gt;</span><span class="si">{</span><span class="n">node_id</span><span class="si">}</span><span class="s1">&lt;/div&gt;&lt;div style=&quot;display:flex&quot;&gt;</span><span class="si">{</span><span class="n">left</span><span class="si">}{</span><span class="n">right</span><span class="si">}</span><span class="s1">&lt;/div&gt;&#39;</span>
+</code></pre></div>
+<h3 id="registration">Registration</h3>
+<div class="highlight"><pre><span></span><code><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">_renderers</span><span class="p">[</span><span class="s1">&#39;tree&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">BSTRenderer</span><span class="p">()</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s1">&#39;bst_example&#39;</span><span class="p">,</span> <span class="s1">&#39;datastructure&#39;</span><span class="p">,</span> <span class="s1">&#39;Binary Search Tree&#39;</span><span class="p">,</span> <span class="s1">&#39;Trees&#39;</span><span class="p">,</span> <span class="n">make_bst_build</span><span class="p">)</span>
+</code></pre></div>
+<p>Now a new “Trees” category appears in the sidebar, and selecting it loads the BST visualizer with custom input.</p>
+<hr />
+<h2 id="8-making-extensions-discoverable-future">8. Making Extensions Discoverable (Future)</h2>
+<p>Currently, the <code>PageCoordinator</code> hard‑codes a set of known components. For a fully dynamic system, you could:</p>
+<ul>
+<li>Use entry points (Python <code>setuptools</code> <code>entry_points</code>) to discover extensions.</li>
+<li>Scan a dedicated <code>plugins/</code> directory for classes implementing a <code>Plugin</code> interface that registers itself.</li>
+<li>Add a <code>register</code> method on <code>ComponentRegistry</code> that accepts class references and instantiates them lazily.</li>
+</ul>
+<p>These enhancements are optional and can be added when multiple external teams need to contribute components.</p>
+<hr />
+<p>Need help? Refer to the <a href="../developer-guide/">Developer Guide</a> for project structure and debugging tips.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

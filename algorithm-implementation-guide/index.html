@@ -1,0 +1,1700 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+        <link rel="next" href="../extending-the-system/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Algorithm Implementation Guide - DSA Visualizer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../None">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="custom" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#algorithm-implementation-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DSA Visualizer Documentation" class="md-header__button md-logo" aria-label="DSA Visualizer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DSA Visualizer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Algorithm Implementation Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="custom" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DSA Visualizer Documentation" class="md-nav__button md-logo" aria-label="DSA Visualizer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DSA Visualizer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Implementation Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Implementation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-where-to-put-your-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Where to put your code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-basealgorithm-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The BaseAlgorithm interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The BaseAlgorithm interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-the-base-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import the base class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-execute-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The execute method
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-step-dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Step Dictionary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The Step Dictionary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-annotations-dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The annotations dictionary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-writing-your-first-algorithm-a-complete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Writing your first algorithm – a complete example
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Writing your first algorithm – a complete example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-bubble-sort-with-detailed-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Bubble Sort with detailed annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-linear-search-with-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Linear Search with target
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-binary-search-with-range-discarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Binary Search with range discarding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-using-long_description-for-study-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Using long_description for study mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-security-and-sandbox-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Security and sandbox restrictions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-testing-your-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Testing your algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Testing your algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-provided-test-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the provided test framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-your-own-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding your own tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-deploying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Deploying
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Deploying">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extending-the-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending the System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../known-limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting the Application
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hosting the Application
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-where-to-put-your-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Where to put your code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-basealgorithm-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The BaseAlgorithm interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The BaseAlgorithm interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-the-base-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import the base class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-execute-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The execute method
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-step-dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Step Dictionary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The Step Dictionary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-annotations-dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The annotations dictionary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-writing-your-first-algorithm-a-complete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Writing your first algorithm – a complete example
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Writing your first algorithm – a complete example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-bubble-sort-with-detailed-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Bubble Sort with detailed annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-linear-search-with-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Linear Search with target
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-binary-search-with-range-discarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Binary Search with range discarding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-using-long_description-for-study-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Using long_description for study mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-security-and-sandbox-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Security and sandbox restrictions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-testing-your-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Testing your algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Testing your algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-provided-test-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the provided test framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-your-own-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding your own tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-deploying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Deploying
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Deploying">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="algorithm-implementation-guide">Algorithm Implementation Guide</h1>
+<p>This guide is for <strong>instructors</strong> (or students) who want to write their own algorithm implementations for the DSA Visualizer.<br />
+You’ll learn how to structure your code, define visualization steps, and integrate your algorithm into the platform.</p>
+<h2 id="1-where-to-put-your-code">1. Where to put your code</h2>
+<p>Place your Python files inside the <strong><code>custom-algorithms/</code></strong> directory (or the directory specified by the <code>CUSTOM_ALGORITHMS_DIR</code> environment variable).<br />
+You can organize your files in subdirectories (e.g., <code>sorting/</code>, <code>search/</code>, <code>trees/</code>). The loader scans all <code>.py</code> files recursively.</p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>custom-algorithms/
+  sorting/
+    my_awesome_sort.py
+  search/
+    my_custom_search.py
+</code></pre></div></p>
+<h2 id="2-the-basealgorithm-interface">2. The BaseAlgorithm interface</h2>
+<p>Every algorithm must inherit from <code>BaseAlgorithm</code> and implement the following abstract properties and methods.</p>
+<h3 id="import-the-base-class">Import the base class</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">algorithms.base_algorithm</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseAlgorithm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span>
+</code></pre></div>
+<h3 id="required-properties">Required properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>Unique identifier (e.g., <code>"my_sort"</code>). Used internally.</td>
+</tr>
+<tr>
+<td><code>display_name</code></td>
+<td><code>str</code></td>
+<td>Human‑readable name shown in the UI (e.g., <code>"My Awesome Sort"</code>).</td>
+</tr>
+<tr>
+<td><code>input_type</code></td>
+<td><code>str</code></td>
+<td>The type of input the algorithm expects. Currently only <code>"array"</code> is supported by the built‑in run config.</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>str</code></td>
+<td>Grouping label for the sidebar (e.g., <code>"Array Sorting"</code>, <code>"Array Searching"</code>, <code>"Custom"</code>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-properties">Optional properties</h3>
+<ul>
+<li><code>needs_target</code> (<code>bool</code>, default <code>False</code>) – if <code>True</code>, the UI will show an extra “Target Value” input. Use this for search algorithms that need a target element.</li>
+<li><code>enabled</code> (<code>bool</code>, default <code>True</code>) – set to <code>False</code> to hide the algorithm from the UI (e.g., during development).</li>
+<li><code>show_code</code> (<code>bool</code>, default <code>False</code>) – reserved for future use; currently ignored.</li>
+</ul>
+<h3 id="the-execute-method">The <code>execute</code> method</h3>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+    <span class="o">...</span>
+</code></pre></div>
+- <strong><code>input_data</code></strong> – For <code>input_type == "array"</code> and <code>needs_target == False</code>, this is a <code>List[int]</code>.<br />
+  For <code>needs_target == True</code>, this is a tuple <code>(List[int], int)</code> where the second element is the target value.
+- <strong>Returns</strong> a list of <strong>step dictionaries</strong> (described below).</p>
+<h2 id="3-the-step-dictionary">3. The Step Dictionary</h2>
+<p>Each step describes one 'frame' of the visualization. The renderer (currently <code>ArrayRenderer</code>) uses the keys to draw bars, colors, labels, and separators.</p>
+<h3 id="required-keys">Required keys</h3>
+<ul>
+<li><strong><code>type</code></strong> (<code>str</code>) – Must be <code>"array"</code> for array‑based visualizations.</li>
+<li><strong><code>data</code></strong> (<code>List[int]</code>) – The array values at this step.</li>
+<li><strong><code>annotations</code></strong> (<code>dict</code>) – A dictionary describing how to style each index or range.</li>
+<li><strong><code>description</code></strong> (<code>str</code>) – Short text shown below the visualization (current step description).</li>
+</ul>
+<h3 id="optional-keys">Optional keys</h3>
+<ul>
+<li><strong><code>long_description</code></strong> (<code>str</code>) – Detailed explanation visible when the step is displayed.</li>
+</ul>
+<h3 id="the-annotations-dictionary">The <code>annotations</code> dictionary</h3>
+<p>Keys can be:
+- <strong>Single index</strong> (int) – applies the properties to that element.
+- <strong>Range</strong> (tuple <code>(start, end)</code>, inclusive) – applies the properties to all indices from <code>start</code> to <code>end</code>. The renderer expands ranges automatically.</p>
+<p>Properties are a dict that can contain:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td><code>str</code></td>
+<td>Semantic role; maps to a predefined color (see below).</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><code>str</code></td>
+<td>Explicit CSS color (overrides <code>category</code>).</td>
+</tr>
+<tr>
+<td><code>offset_x</code></td>
+<td><code>int</code></td>
+<td>Pixel offset for the bar (horizontal).</td>
+</tr>
+<tr>
+<td><code>offset_y</code></td>
+<td><code>int</code></td>
+<td>Pixel offset for the bar (vertical).</td>
+</tr>
+<tr>
+<td><code>separator_after</code></td>
+<td><code>bool</code></td>
+<td>Draws a vertical separator line after this element.</td>
+</tr>
+<tr>
+<td><code>removed</code></td>
+<td><code>bool</code></td>
+<td>Marks the element as removed (shows <code>[X]</code> index, does not count in logical index).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="category-colors">Category colors</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default</code></td>
+<td>Blue</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td>Green</td>
+</tr>
+<tr>
+<td><code>failure</code></td>
+<td>Red</td>
+</tr>
+<tr>
+<td><code>compare</code></td>
+<td>Yellow</td>
+</tr>
+<tr>
+<td><code>swap</code></td>
+<td>Yellow</td>
+</tr>
+<tr>
+<td><code>pivot</code></td>
+<td>Purple</td>
+</tr>
+<tr>
+<td><code>partition</code></td>
+<td>Orange</td>
+</tr>
+<tr>
+<td><code>merge</code></td>
+<td>Teal</td>
+</tr>
+<tr>
+<td><code>discard</code></td>
+<td>Gray</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-writing-your-first-algorithm-a-complete-example">4. Writing your first algorithm – a complete example</h2>
+<h3 id="example-1-bubble-sort-with-detailed-annotations">Example 1: Bubble Sort with detailed annotations</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">algorithms.base_algorithm</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseAlgorithm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyBubbleSort</span><span class="p">(</span><span class="n">BaseAlgorithm</span><span class="p">):</span>
+    <span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">show_code</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># for future use</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;my_bubble_sort&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;My Bubble Sort&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">input_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;array&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">category</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Array Sorting&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+        <span class="n">steps</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="c1"># Initial state</span>
+        <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+            <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;default&#39;</span><span class="p">}},</span>
+            <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;Initial array&#39;</span>
+        <span class="p">})</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="c1"># Comparison</span>
+                <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+                    <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;default&#39;</span><span class="p">},</span>
+                        <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">},</span>
+                        <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;compare&#39;</span><span class="p">}</span>
+                    <span class="p">},</span>
+                    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Comparing arr[</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">]=</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s1"> with arr[</span><span class="si">{</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">]=</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+                <span class="p">})</span>
+
+                <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                    <span class="c1"># Swap</span>
+                    <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+                        <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;default&#39;</span><span class="p">},</span>
+                            <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">},</span>
+                            <span class="n">j</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;swap&#39;</span><span class="p">},</span>
+                            <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;swap&#39;</span><span class="p">}</span>
+                        <span class="p">},</span>
+                        <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Swapping arr[</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">] and arr[</span><span class="si">{</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">]&#39;</span>
+                    <span class="p">})</span>
+
+            <span class="c1"># Mark sorted section</span>
+            <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+                <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">}</span>
+                <span class="p">},</span>
+                <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Positions </span><span class="si">{</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1"> through </span><span class="si">{</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1"> are now sorted&#39;</span>
+            <span class="p">})</span>
+
+        <span class="c1"># Final sorted state</span>
+        <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+            <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">}},</span>
+            <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;Array is fully sorted&#39;</span>
+        <span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">steps</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Mutable Data Types</p>
+<p>It is important that the data key passes a <em>copy</em> of the data structure, rather than the object
+that you are operating on directly. Otherwise, the visualizer will display the final state
+of the object for every step.</p>
+</div>
+<h3 id="example-2-linear-search-with-target">Example 2: Linear Search with target</h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyLinearSearch</span><span class="p">(</span><span class="n">BaseAlgorithm</span><span class="p">):</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;my_linear_search&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;My Linear Search&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">input_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;array&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">category</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Array Searching&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">needs_target</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+        <span class="n">arr</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">input_data</span>
+        <span class="n">steps</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+            <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Searching for target </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="p">})</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+                <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;compare&#39;</span><span class="p">}},</span>
+                <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Checking index </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: value </span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="p">})</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+                <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+                    <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">}},</span>
+                    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Found </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1"> at index </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span>
+                <span class="p">})</span>
+                <span class="k">return</span> <span class="n">steps</span>
+
+        <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+            <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="p">{</span><span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;failure&#39;</span><span class="p">}},</span>
+            <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1"> not found&#39;</span>
+        <span class="p">})</span>
+        <span class="k">return</span> <span class="n">steps</span>
+</code></pre></div>
+<h3 id="example-3-binary-search-with-range-discarding">Example 3: Binary Search with range discarding</h3>
+<p>See the file <code>custom-algorithms/search/e_binary_search.py</code> in the repository for a full implementation that uses the <code>discard</code> category and <code>separator_after</code> to show discarded halves.</p>
+<h2 id="5-using-long_description-for-study-mode">5. Using <code>long_description</code> for study mode</h2>
+<p>Add a <code>long_description</code> key to a step to provide extra detail for students.</p>
+<div class="highlight"><pre><span></span><code><span class="n">step</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+    <span class="s1">&#39;annotations&#39;</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;Swapping elements 2 and 3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;long_description&#39;</span><span class="p">:</span> <span class="s1">&#39;This swap moves the larger element upward, gradually building the sorted portion at the end of the array.&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="6-security-and-sandbox-restrictions">6. Security and sandbox restrictions</h2>
+<p>Algorithms execute in a <strong>restricted subprocess</strong> with limited built‑in functions. The following operations are <strong>forbidden</strong> and will cause a runtime error:</p>
+<ul>
+<li>File I/O (<code>open</code>, <code>read</code>, <code>write</code>)</li>
+<li>Network access (<code>socket</code>, <code>urllib</code>)</li>
+<li>Subprocess creation (<code>subprocess</code>, <code>os.system</code>)</li>
+<li>Import of external modules (<code>import</code>, <code>from ... import ...</code>) – only the <code>BaseAlgorithm</code> stub and <code>typing</code> are available inside the sandbox.</li>
+<li>Introspection (<code>__subclasses__</code>, <code>__globals__</code>, <code>getattr</code>, <code>dir</code>, etc.)</li>
+<li>Infinite loops (enforced by a CPU time limit of 10 seconds)</li>
+</ul>
+<p><strong>Allowed built‑ins</strong> include: <code>abs</code>, <code>all</code>, <code>any</code>, <code>bool</code>, <code>dict</code>, <code>enumerate</code>, <code>float</code>, <code>int</code>, <code>len</code>, <code>list</code>, <code>max</code>, <code>min</code>, <code>range</code>, <code>round</code>, <code>sorted</code>, <code>str</code>, <code>sum</code>, and class‑related internals like <code>property</code>, <code>super</code>.</p>
+<p>This is an extra security layer to protect against a file write permission misconfiguration to the <code>custom-algorithms</code> directory. Particularly, for if the project is hosted on public-facing infrastructure, such as CSU's Grail server.</p>
+<p>If your algorithm relies on an external library, you must implement the logic manually using only the allowed built‑ins.</p>
+<h2 id="7-testing-your-algorithm">7. Testing your algorithm</h2>
+<h3 id="using-the-provided-test-framework">Using the provided test framework</h3>
+<p>From the project root, run:
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>test.py
+</code></pre></div>
+This discovers and runs all tests in the <code>tests/</code> directory.</p>
+<h3 id="adding-your-own-tests">Adding your own tests</h3>
+<ol>
+<li>Create a new test file in <code>tests/</code> (e.g., <code>test_my_algorithm.py</code>).</li>
+<li>Add <code>sys.path</code> adjustments to locate the source (see existing tests for reference).</li>
+<li>Write standard <code>unittest</code> test cases that call <code>algorithm.execute()</code> and verify:</li>
+<li>The return type is a list.</li>
+<li>Each step has the required keys (<code>type</code>, <code>data</code>, <code>annotations</code>, <code>description</code>).</li>
+<li>The final <code>data</code> is correctly sorted/searched.</li>
+<li>Edge cases: empty array, single element, duplicates, already sorted input.</li>
+</ol>
+<p>Example test skeleton:
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;custom-algorithms&quot;</span><span class="p">))</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sorting.my_sort</span><span class="w"> </span><span class="kn">import</span> <span class="n">MySort</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestMySort</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_sorts_array</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">algo</span> <span class="o">=</span> <span class="n">MySort</span><span class="p">()</span>
+        <span class="n">steps</span> <span class="o">=</span> <span class="n">algo</span><span class="o">.</span><span class="n">execute</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="n">final</span> <span class="o">=</span> <span class="n">steps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">final</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</code></pre></div></p>
+<h2 id="8-deploying">8. Deploying</h2>
+<p>All algorithms are loaded once upon service start. To see any changes to existing algorithms or additions of new ones, you will need to restart the main application server.</p>
+<h3 id="docker-deployment">Docker deployment</h3>
+<p>When using Docker, the <code>custom-algorithms/</code> directory on the host is mounted directly into the container (<code>/custom-algorithms</code>). </p>
+<p>The <code>CUSTOM_ALGORITHMS_DIR</code> environment variable is automatically set to <code>/custom-algorithms</code> inside the container. You don’t need to adjust it.</p>
+<h2 id="9-troubleshooting">9. Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Algorithm not appearing in sidebar</td>
+<td>File not in the correct directory, or <code>enabled = False</code>, or the application hasn't been restarted.</td>
+<td>Check the path under <code>CUSTOM_ALGORITHMS_DIR</code>, and ensure the class has <code>enabled = True</code>. Restart the application.</td>
+</tr>
+<tr>
+<td>"Forbidden operation" error</td>
+<td>Used disallowed built‑in (e.g., <code>open</code>, <code>import</code>)</td>
+<td>Remove the forbidden call; re‑implement the logic manually.</td>
+</tr>
+<tr>
+<td>"Algorithm timed out"</td>
+<td>Infinite loop or very slow execution</td>
+<td>Check for loops that may not terminate; add early exits.</td>
+</tr>
+<tr>
+<td>Steps not rendering</td>
+<td>Missing required keys in step dict</td>
+<td>Verify each step has <code>type</code>, <code>data</code>, <code>annotations</code>, <code>description</code>.</td>
+</tr>
+<tr>
+<td>Target field not showing</td>
+<td><code>needs_target</code> not set</td>
+<td>Add <code>@property\ndef needs_target(self): return True</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>For further help, enable <code>DEBUG=true</code> in <code>.env</code> to see detailed logs, or consult the <a href="../developer-guide/">Developer Guide</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
