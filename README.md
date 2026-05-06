@@ -13,3 +13,6 @@ deploy changes to GitHub pages
 ```bash
 mkdocs gh-deploy
 ```
+
+# Contact
+Questions about the project can be directed to `dsa-visualizer-cis-capstone-2026@csuohio.onmicrosoft.com` or `i.spittal@vikes.csuohio.edu`
